@@ -1,0 +1,9 @@
+{
+	"name": "uzzielpelawak/yii2-gii-uzziel",
+	"description": "Gii Generator for Yii2 Dashboard",
+	"autoload": {
+		"psr-4": {
+			"uzzielpelawak\\yii2-gii-uzziel\\": ""
+		}
+	}
+}
