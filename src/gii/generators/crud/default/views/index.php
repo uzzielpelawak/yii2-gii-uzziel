@@ -24,6 +24,11 @@ use uzzielpelawak\modules\UserManagement\models\User;
 $this->title = <?= $generator->generateString(Inflector::pluralize(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<style>
+    <?= '.'. str_replace(' ', '-',strtolower(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>-container {
+        vertical-align: middle !important;
+    }
+</style>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -42,8 +47,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= "                <?= " ?>GridView::widget([
                         'pjax' => true,
                         'pjaxSettings' => [
-                            'options' => ['id' => 'container-<?= "<?= " ?>str_replace(' ', '-',Inflector::camel2words(StringHelper::basename($generator->modelClass))) ?>'],
                             'neverTimeout' => true,
+                        ],
+                        'options' => [
+                            'id' => '<?= str_replace(' ', '-',strtolower(Inflector::camel2words(StringHelper::basename($generator->modelClass)))) ?>-container'
                         ],
                         'panel' => [
                             'type' => GridView::TYPE_PRIMARY,
